@@ -131,6 +131,13 @@ function scis_two_scripts()
 
   // Zurb Foundation 5.5.3
   wp_enqueue_style('foundation-style', get_template_directory_uri() . '/css/foundation.min.css', 'scis_two-style', '5.5.3', 'all');
+
+  // Slick Slider 1.8.1
+  wp_enqueue_style('slick', get_template_directory_uri() . '/css/slick.css', 'scis_two-style', '1.8.1', 'all');
+
+  // Slick Slider Theme 1.8.1
+  wp_enqueue_style('slick-theme', get_template_directory_uri() . '/css/slick-theme.css', 'slick', '1.8.1', 'all');
+
   /**
 	 * JS Files
 	 */
@@ -144,6 +151,8 @@ function scis_two_scripts()
   wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array('jquery', 'fastclick'), '1.4.1', true);
 
   wp_enqueue_script('foundation-script', get_template_directory_uri() . '/js/foundation.min.js', array('jquery', 'fastclick', 'placeholder', 'jquery-cookie'), '5.5.3', true);
+
+  wp_enqueue_script('slick-script', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.1', true);
 
   wp_enqueue_script('scis_two-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
 
