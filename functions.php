@@ -137,6 +137,8 @@ function scis_two_scripts()
 
   // Slick Slider Theme 1.8.1
   wp_enqueue_style('slick-theme', get_template_directory_uri() . '/css/slick-theme.css', 'slick', '1.8.1', 'all');
+    // DIGICDN
+    wp_enqueue_style('case-style', get_template_directory_uri() . '/css/digicdn.css' , 'scis_two-style');
 
   /**
 	 * JS Files
@@ -153,10 +155,15 @@ function scis_two_scripts()
   wp_enqueue_script('foundation-script', get_template_directory_uri() . '/js/foundation.min.js', array('jquery', 'fastclick', 'placeholder', 'jquery-cookie'), '5.5.3', true);
 
   wp_enqueue_script('slick-script', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.1', true);
+  // Font Awesome CSS
+  wp_enqueue_style('scis-font-awesome-min-style', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css', array('scis_two-style'), null, 'all'); 
 
   wp_enqueue_script('scis_two-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
 
   wp_enqueue_script('scis_two-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+
+  // Digi CDN Script
+  wp_enqueue_script('digi-cdn-core', get_template_directory_uri() . '/js/digi-cdn-core.js', array('jquery'), '2.0.9', true);
 
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
@@ -189,4 +196,22 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if (defined('JETPACK__VERSION')) {
   require get_template_directory() . '/inc/jetpack.php';
+}
+
+
+// Navigation Bar Links Walker
+class Custom_Walker_Nav_Menu_top extends Walker_Nav_Menu
+{
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $is_current_item = '';
+        if(array_search('current-menu-item', $item->classes) != 0)
+        {
+            $is_current_item = ' class="current"';
+        }
+        echo '<li'.$is_current_item.'><a href="'.$item->url.'"><span>'.$item->title.'</span>';
+    }
+
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        echo '</a></li>';
+    }
 }
