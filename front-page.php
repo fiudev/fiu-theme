@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<?php get_template_part('template-parts/content', 'hero-static'); ?>
+<?php get_template_part('template-parts/hero/content', 'static'); ?>
 
 
 <?php
