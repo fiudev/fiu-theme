@@ -132,6 +132,11 @@ function scis_two_scripts()
   // Zurb Foundation 5.5.3
   wp_enqueue_style('foundation-style', get_template_directory_uri() . '/css/foundation.min.css', 'scis_two-style', '5.5.3', 'all');
 
+  // Slick Slider 1.8.1
+  wp_enqueue_style('slick', get_template_directory_uri() . '/css/slick.css', 'scis_two-style', '1.8.1', 'all');
+
+  // Slick Slider Theme 1.8.1
+  wp_enqueue_style('slick-theme', get_template_directory_uri() . '/css/slick-theme.css', 'slick', '1.8.1', 'all');
     // DIGICDN
     wp_enqueue_style('case-style', get_template_directory_uri() . '/css/digicdn.css' , 'scis_two-style');
 
@@ -149,6 +154,7 @@ function scis_two_scripts()
 
   wp_enqueue_script('foundation-script', get_template_directory_uri() . '/js/foundation.min.js', array('jquery', 'fastclick', 'placeholder', 'jquery-cookie'), '5.5.3', true);
 
+  wp_enqueue_script('slick-script', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.1', true);
   // Font Awesome CSS
   wp_enqueue_style('scis-font-awesome-min-style', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css', array('scis_two-style'), null, 'all'); 
 
