@@ -9,6 +9,10 @@
 
 ?>
 <style>
+.static-hero {
+    margin-bottom: 40px;
+}
+
 .static-slide {
     height: 700px;
     width: 100%;
@@ -57,7 +61,7 @@
 
 @media (max-width: 1024px) and (min-width: 641px) {
 
-    .static-slide .image img {
+    .static-slide {
         height: 600px;
     }
 
@@ -70,9 +74,11 @@
 
 @media (max-width: 641px) {
 
-    .static-slide .image img {
+    .static-slide {
         height: 450px;
     }
+
+
 
     /* Slide Info */
 
@@ -94,7 +100,8 @@
 
     <div class="slide-info">
         <div class="slide-title">
-            <h1>Senior Design Showcase Attracts Talent Recruiters</h1>
+            <h1>
+                UPE & WICS at Dolphins Stem Day</h1>
         </div>
 
         <div class="slide-button">
@@ -107,10 +114,7 @@
 
     <div class="static-slide">
         <div class="image">
-            <img
-                src="https://cec.fiu.edu/wp-content/uploads/2018/11/ranu-jung-prosthetic-hand-system-fiu-computing-engineering-1600x1068.jpg">
+            <img src="https://www.cis.fiu.edu/wp-content/uploads/2018/11/XirMREcQEa2JMUuxt6DHA.jpg">
         </div>
     </div>
-
-    <script>
-    </script>
+</div>
