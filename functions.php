@@ -215,3 +215,116 @@ class Custom_Walker_Nav_Menu_top extends Walker_Nav_Menu
         echo '</a></li>';
     }
 }
+
+/**
+ * Generate breadcrumbs
+ * @author CodexWorld
+ * @authorURL www.codexworld.com
+ */
+function get_breadcrumb() {
+  echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+  if (is_category() || is_single()) {
+      echo "&nbsp;&nbsp;/&nbsp;&nbsp;";
+      the_category(' &bull; ');
+          if (is_single()) {
+              echo " &nbsp;&nbsp;/&nbsp;&nbsp; ";
+              the_title();
+          }
+  } elseif (is_page()) {
+      echo "&nbsp;&nbsp;/&nbsp;&nbsp;";
+      echo the_title();
+  } elseif (is_search()) {
+      echo "&nbsp;&nbsp;/&nbsp;&nbsp;Search Results for... ";
+      echo '"<em>';
+      echo the_search_query();
+      echo '</em>"';
+  }
+}
+
+// Kirki theme config
+Kirki::add_config('my_theme_config', array(
+  'capability' => 'edit_theme_options',
+  'option_type' => 'theme_mod'
+));
+
+// Content Settings panel
+Kirki::add_panel('site_settings', array(
+  'priority' => 10,
+  'title' => esc_attr__( 'Content Settings', 'kirki'),
+));
+
+// Home main Text
+Kirki::add_section('home_main_info', array(
+  'title' => esc_attr__( 'Home content', 'kirki'),
+  'panel' => 'site_settings',
+  'priority' => 10
+));
+
+// Main Title
+Kirki::add_field('my_theme_config', array(
+  'type' => 'text',
+  'settings' => 'home_title_main_section',
+  'label' => __('Home title text', 'kirki'),
+  'section' => 'home_main_info',
+  'default' => esc_attr__('School of Computing and Information Sciences', 'kirki'),
+  'priority' => 10,
+));
+
+// Main text
+Kirki::add_field('my_theme_config', array(
+  'type' => 'editor',
+  'settings' => 'home_text_main_section',
+  'label' => __('Home main text', 'kirki'),
+  'section' => 'home_main_info',
+  'priority' => 10,
+  'default' => esc_attr__('The School of Computing and Information Sciences was formed in 1987 from the former Department of Mathematical Sciences. The mission of the School has several dimensions, consistent with the overall mission of the University and consistent with its role as part of the College of Engineering and Computing.', 'kirki'),
+));
+
+// Sub title
+Kirki::add_field('my_theme_config', array(
+  'type' => 'text',
+  'settings' => 'home_title_sub_section',
+  'label' => __('Home sub title', 'kirki'),
+  'section' => 'home_main_info',
+  'default' => esc_attr__('Creating Florida\'s next generation of computing professionals', 'kirki'),
+  'priority' => 10,
+));
+
+// Sub Text
+Kirki::add_field('my_theme_config', array(
+  'type' => 'editor',
+  'settings' => 'home_text_sub_section',
+  'label' => __('Home sub text', 'kirki'),
+  'section' => 'home_main_info',
+  'priority' => 10,
+  'default' => esc_attr__('Our programs prepare students for either continued graduate education or for careers in business, industry, or government. Further, our programs include a mix and balance of application-oriented course work and study of the underlying theory and principles.', 'kirki'),
+));
+
+
+// BG Color
+// Kirki::add_panel('my_colors', array(
+//   'priority' => 10, // order for customizer
+//   'title' => esc_attr__('My Colors', 'kirki'),
+//   'description' => esc_attr('My Colors description', 'kirki')
+// ));
+
+// Kirki::add_section('nav_settings', array(
+//   'title' => esc_attr__('Navigation Settings', 'kirki'),
+//   'description' => esc_attr__('Navigation Settings description', 'kirki'),
+//   'panel' => 'my_colors',
+//   'priority' => 10
+// ));
+
+// Kirki::add_field('my_theme_config', array(
+//   'type' => 'color', // type of control
+//   'settings' => 'nav_bg_color', // id to call in php/html
+//   'label' => __('Navigation Background', 'kirki'),
+//   'section' => 'nav_settings',
+//   'default' => '#fff',
+//   'output' => array (
+//     array (
+//       'element' => '.global-header',
+//       'property' => 'background-color'
+//     ),
+//   )
+// ));

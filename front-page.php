@@ -13,10 +13,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/hero/content', 'static'); ?>
 
 <!-- Main Header -->
-<?php get_template_part('template-parts/header/content', 'main'); ?>
+<?php get_template_part('template-parts/info/content', 'main'); ?>
 
 <!-- Sub Header -->
-<?php get_template_part('template-parts/header/content', 'sub'); ?>
+<?php get_template_part('template-parts/info/content', 'sub'); ?>
 
 <!-- Points of pride / info -->
 <?php get_template_part('template-parts/info/content', 'three-column'); ?>
@@ -31,6 +31,9 @@ get_header(); ?>
 
 <!-- Events -->
 <?php get_template_part('template-parts/events/content', 'three-column'); ?>
+
+<!-- Video -->
+<?php get_template_part('template-parts/info/content', 'video'); ?>
 
 
 
