@@ -301,6 +301,73 @@ Kirki::add_field('my_theme_config', array(
 ));
 
 
+// Home POP(points of pride) Three column section
+Kirki::add_section('home_pop_section', array(
+  'title' => esc_attr__( 'Home Points of Pride', 'kirki'),
+  'panel' => 'site_settings',
+  'priority' => 10
+));
+
+// POP Image One
+Kirki::add_field('my_theme_config', array(
+  'type' => 'image',
+  'settings' => 'home_pop_image_one',
+  'label' => __('Image 1', 'kirki'),
+  'section' => 'home_pop_section',
+  'default' => 'https://i1.wp.com/www.cis.fiu.edu/wp-content/uploads/2016/07/cta-applying-now_v2.jpg',
+  'priority' => 10,
+));
+
+// POP Text One
+Kirki::add_field('my_theme_config', array(
+  'type' => 'text',
+  'settings' => 'home_pop_text_one',
+  'label' => __('Text 1', 'kirki'),
+  'section' => 'home_pop_section',
+  'default' => esc_attr__('Title 1', 'kirki'),
+  'priority' => 10,
+));
+
+// POP Image Two
+Kirki::add_field('my_theme_config', array(
+  'type' => 'image',
+  'settings' => 'home_pop_image_two',
+  'label' => __('Image 2', 'kirki'),
+  'section' => 'home_pop_section',
+  'default' => 'https://i1.wp.com/www.cis.fiu.edu/wp-content/uploads/2016/07/cta-applying-now_v2.jpg',
+  'priority' => 10,
+));
+
+// POP Text Two
+Kirki::add_field('my_theme_config', array(
+  'type' => 'text',
+  'settings' => 'home_pop_text_two',
+  'label' => __('Text 2', 'kirki'),
+  'section' => 'home_pop_section',
+  'default' => esc_attr__('Title 2', 'kirki'),
+  'priority' => 10,
+));
+
+// POP Image Three
+Kirki::add_field('my_theme_config', array(
+  'type' => 'image',
+  'settings' => 'home_pop_image_three',
+  'label' => __('Image 3', 'kirki'),
+  'section' => 'home_pop_section',
+  'default' => 'https://i1.wp.com/www.cis.fiu.edu/wp-content/uploads/2016/07/cta-applying-now_v2.jpg',
+  'priority' => 10,
+));
+
+// POP Text Three
+Kirki::add_field('my_theme_config', array(
+  'type' => 'text',
+  'settings' => 'home_pop_text_three',
+  'label' => __('Text 3', 'kirki'),
+  'section' => 'home_pop_section',
+  'default' => esc_attr__('Title 3', 'kirki'),
+  'priority' => 10,
+));
+
 // BG Color
 // Kirki::add_panel('my_colors', array(
 //   'priority' => 10, // order for customizer
